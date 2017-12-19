@@ -3,10 +3,10 @@ import random, math
 
 symbols = {
 	"": "¤",
-	"N": "║",
-	"W": "═",
-	"S": "║",
-	"E": "═",
+	"N": "╥",
+	"W": "╞",
+	"S": "╨",
+	"E": "╡",
 	"NE": "╚",
 	"NW": "╝",
 	"NS": "║",
@@ -180,7 +180,9 @@ class Labyrinth():
 
 	def htmlfy(self):
 		s = "<html>\n"
-		s += "\t<head>\n\t\t<style>html{background-color: black; color: white;} font{font-family: \"Courier\";}</style>\n\t</head>\n"
+		s += "\t<head>\n"
+		s += "\t\t<meta charset=\"UTF-8\">\n"
+		s += "\t\t<style>html{background-color: black; color: white;} font{font-family: \"Courier\";}</style>\n\t</head>\n"
 		s += "\t<body>\n"
 
 		for z in range(self.depth):
@@ -225,11 +227,11 @@ class Labyrinth():
 		return s
 
 if __name__ == "__main__":
-	width = 5
-	height = 5
-	depth = 5
-	start = (1, 1, 1)
-	end = (4, 4, 4)
+	width = 2
+	height = 2
+	depth = 2
+	start = (0, 0, 0)
+	end = (1, 1, 1)
 	l = Labyrinth(width, height, depth, start, end)
 
 	with open("yaml/settings.yaml", "w+") as f:
